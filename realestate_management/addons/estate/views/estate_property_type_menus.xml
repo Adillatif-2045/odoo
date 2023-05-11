@@ -1,0 +1,15 @@
+<odoo>
+
+
+    <menuitem id="menu_settings_master"
+              name="Settings"
+              parent="menu_estate_property_root"
+              sequence="0"/>
+
+    <menuitem id="menu_property_type"
+              name="Property Types"
+              action="property_type_action"
+              parent="menu_settings_master"
+              sequence="10"/>
+
+</odoo>

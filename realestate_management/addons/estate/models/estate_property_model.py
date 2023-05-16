@@ -101,8 +101,8 @@ class EstateProperties(models.Model):
     @api.constrains('offer_ids')
     def _check_best_offer(self):
         for record in self:
-
-            if record.offer_ids.price < (record.expected_price * 0.9):
+            best_offer = record.offer_ids.filtered(lambda o: o.price < (record.expected_price * 0.9))
+            if best_offer:
                 raise ValidationError("Selling Price should be greater than 90% of expected price")
 
             else:
